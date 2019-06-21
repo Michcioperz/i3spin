@@ -3,6 +3,14 @@ name = "i3spin"
 version = "0.2.0"
 authors = ["Michał Sidor (Michcioperz) <public+git@meekchopp.es>"]
 edition = "2018"
+license = "BSD-3-Clause"
+description = "i3wm helper program for alt+tab-like focus switching"
+repository = "https://git.sr.ht/~michcioperz/i3spin"
+readme = "README.md"
+categories = ["command-line-utilities"]
+
+[badges]
+maintenance = { status = "as-is" }
 
 [profile.release]
 lto = true
