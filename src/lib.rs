@@ -52,7 +52,7 @@ fn collect_nodes(root: Node, coll: &mut Vec<NodePtr>) {
     }
 }
 
-fn main() {
+pub fn i3spin(distance: usize, forward: bool) {
     let mut i3 = I3Connection::connect().unwrap();
     let workspaces = i3.get_workspaces().unwrap();
     let workspace = find_active_workspace(workspaces.workspaces);
@@ -70,7 +70,12 @@ fn main() {
             break;
         }
     }
-    let next_i = ((focused_i.unwrap() + 1) % ws_nodes.len());
+    let focused_i = focused_i.unwrap();
+    let next_i = if forward {
+        focused_i + (distance % ws_nodes.len())
+    } else {
+        ws_nodes.len() + focused_i - (distance % ws_nodes.len())
+    } % ws_nodes.len();
     i3.run_command(&format!("[con_id={}] focus", ws_nodes[next_i].id))
         .unwrap();
 }

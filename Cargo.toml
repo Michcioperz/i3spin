@@ -1,8 +1,12 @@
 [package]
 name = "i3spin"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Michał Sidor (Michcioperz) <public+git@meekchopp.es>"]
 edition = "2018"
+
+[profile.release]
+lto = true
+opt-level = 'z'
 
 [dependencies]
 i3ipc = "0.10"
