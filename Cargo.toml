@@ -17,4 +17,4 @@ lto = true
 opt-level = 'z'
 
 [dependencies]
-i3ipc = "0.10"
+i3ipc = "0.10.1"
