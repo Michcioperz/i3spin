@@ -9,6 +9,9 @@ repository = "https://git.sr.ht/~michcioperz/i3spin"
 readme = "README.md"
 categories = ["command-line-utilities"]
 
+[features]
+not-only-windows = []
+
 [badges]
 maintenance = { status = "as-is" }
 

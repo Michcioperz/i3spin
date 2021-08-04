@@ -41,7 +41,7 @@ struct NodePtr {
 }
 
 fn collect_nodes(root: Node, coll: &mut Vec<NodePtr>) {
-    if root.window.is_some() {
+    if cfg!(feature = "not-only-windows") || root.window.is_some() {
         coll.push(NodePtr {
             id: root.id,
             focused: root.focused,
